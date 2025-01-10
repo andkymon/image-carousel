@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.frame {
+    height: 360px;
+    width: 360px;
+    position: relative;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 8px;
+}
+
+.slides-wrapper {
+    width: max-content;
+    transform: translateX(-0%);
+    display: flex;
+}
+
+.slide {
+    height: 360px;
+    width: 360px;
+    text-align: center;
+}
+
+.slide-image {
+    display: inline-block;
+    height: 360px;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 24px;
+    width: 24px;
+    background-image: url("./assets/right-arrow.svg");
+    background-size: contain;
+    background-color: transparent;
+    border: 0;
+    transition: 0.3s;
+}
+
+.carousel-button.left {
+    left: 0;
+    transform: translateY(-50%) scaleX(-1);
+}
+
+.carousel-button.left:hover {
+    transform: translateY(-50%) scaleX(-1) scale(1.2);
+}
+
+.carousel-button.right {
+    right: 0;
+}
+
+.carousel-button.right:hover {
+    transform: translateY(-50%) scale(1.2);
+}
+
+.carousel-dot-wrapper {
+    height: 36px;
+    width: fit-content;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.carousel-dot {
+    height: 8px;
+    width: 8px;
+    border: 1px solid white;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.carousel-dot.selected {
+    background-color: white;
+}
